@@ -7,203 +7,188 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-	/* Common styles */
-	body, html {
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		background: url('https://images.pexels.com/photos/2251206/pexels-photo-2251206.jpeg') no-repeat center center fixed;
-		background-size: cover;
-		color: #fff;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-	}
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.pexels.com/photos/2251206/pexels-photo-2251206.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .title-container {
+            background-color: rgba(255, 255, 255, 0);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .title-container h1 {
+            font-size: 60px; /* Increased font size for title */
+        }
+        .container {
+            width: 100%;
+            max-width: 800px; /* Increased max width */
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        .form-control {
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            text-align: center;
+            font-size: 22px; /* Further increased font size */
+            padding: 15px; /* Increased padding */
+        }
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: none;
+            caret-color: #fff;
+        }
+        .form-control::placeholder {
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #007BFF;
+            border-color: #007BFF;
+            border-radius: 5px;
+            width: 100%;
+            padding: 15px 0;
+            font-size: 22px; /* Increased font size */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .result {
+            margin-top: 25px;
+            font-size: 24px; /* Increased font size */
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        .custom-yellow {
+            color: #FFCC00;
+            margin: 0;
+            padding: 0;
+			display: inline;
+        }			
+        /* Video Container Style */
+        .video-container {
+            display: none; /* Hidden by default */
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden; /* Ensure content does not overflow */
+        }
+        .video-container iframe {
+            border-radius: 10px;
+            width: 100%;
+            height: 325px;
+            /* Make iframe responsive */
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover; /* Adjusts how the content should fit the iframe */
+        }
+        .arrow {
+            position: absolute;
+            top: 42%;
+            transform: translateY(-50%);
+            font-size: 80px; /* Increase the font-size to make the arrows larger */
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            z-index: 1;
+            user-select: none;
+            transition: color 0.3s ease;
+        }
+        .arrow:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+        .arrow-left {
+            left: -100px; /* Increase distance from the container */
+        }
+        .arrow-right {
+            right: -100px; /* Increase distance from the container */
+        }
+        @media (max-width: 768px) {
+            .title-container h1 {
+                font-size: 28px; /* More aggressive scaling for mobile users */
+            }
+            .container {
+                max-width: 100%;
+                padding: 0 10px; /* Reduce padding to fit content */
+                flex-direction: column; /* Stack elements vertically on smaller screens */
+            }
+            .card {
+                padding: 15px; /* Further reduce padding for mobile */
+            }
+            .btn-primary {
+                font-size: 16px; /* More aggressive scaling for buttons */
+                padding: 10px 0; /* Adjust padding */
+            }
+            .result {
+                font-size: 14px; /* Reduce font size for results */
+            }
+            .video-container {
+                max-width: 100%; /* Ensure video container fits on smaller screens */
+                height: auto; /* Adjust height to auto for better responsiveness */
+            }
+            .video-container iframe {
+                height: auto; /* Adjust iframe height */
+                max-height: 100%; /* Ensure iframe does not exceed container height */
+            }
+            .arrow {
+                display: none; /* Hide arrows for mobile users */
+            }
+			
+			/* Specific adjustment to move .container.text-center higher */
+			.container.text-center {
+				margin-top: -30px !important; /* Adjust as needed */
+			}
 
-	.title-container {
-		background-color: rgba(255, 255, 255, 0);
-		padding: 20px 30px;
-		border-radius: 10px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-		backdrop-filter: blur(5px);
-		text-align: center;
-		margin-bottom: 30px;
-	}
+			.title-container {
+				margin-bottom: 40px !important;
+			}
+			}
 
-	.title-container h1 {
-		font-size: 60px;
-	}
-
-	.container {
-		width: 100%;
-		max-width: 800px;
-	}
-
-	.card {
-		background-color: rgba(255, 255, 255, 0);
-		padding: 30px;
-		border-radius: 10px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-		backdrop-filter: blur(10px);
-	}
-
-	.form-control {
-		border-radius: 5px;
-		background-color: rgba(255, 255, 255, 0.3);
-		color: #fff;
-		border: 1px solid rgba(255, 255, 255, 0.5);
-		text-align: center;
-		font-size: 22px;
-		padding: 15px;
-	}
-
-	.form-control:focus {
-		background-color: rgba(255, 255, 255, 0.3);
-		color: #fff;
-		border-color: rgba(255, 255, 255, 0.5);
-		box-shadow: none;
-		caret-color: #fff;
-	}
-
-	.form-control::placeholder {
-		color: #fff;
-	}
-
-	.btn-primary {
-		background-color: #007BFF;
-		border-color: #007BFF;
-		border-radius: 5px;
-		width: 100%;
-		padding: 15px 0;
-		font-size: 22px;
-	}
-
-	.btn-primary:hover {
-		background-color: #0056b3;
-		border-color: #004085;
-	}
-
-	.result {
-		margin-top: 25px;
-		font-size: 24px;
-	}
-
-	a {
-		color: #007BFF;
-		text-decoration: none;
-	}
-
-	a:hover {
-		text-decoration: underline;
-	}
-
-	p {
-		margin: 0;
-		padding: 0;
-	}
-
-	.video-container {
-		display: none;
-		background-color: rgba(255, 255, 255, 0.1);
-		padding: 10px;
-		border-radius: 10px;
-		text-align: center;
-		margin-top: 20px;
-		width: 100%;
-		max-width: 100%;
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		overflow: hidden;
-	}
-
-	.video-container iframe {
-		border-radius: 10px;
-		width: 100%;
-		height: 360px;
-		max-width: 100%;
-		max-height: 100%;
-		object-fit: cover;
-	}
-
-	.arrow {
-		position: absolute;
-		top: 42%;
-		transform: translateY(-50%);
-		font-size: 80px;
-		color: rgba(255, 255, 255, 0.7);
-		cursor: pointer;
-		z-index: 1;
-		user-select: none;
-		transition: color 0.3s ease;
-	}
-
-	.arrow:hover {
-		color: rgba(255, 255, 255, 1);
-	}
-
-	.arrow-left {
-		left: -100px;
-	}
-
-	.arrow-right {
-		right: -100px;
-	}
-
-     /* Styles for mobile users */
-     @media (max-width: 768px) {
-     .title-container h1 {
-        font-size: 28px;
-    }
-    .container {
-        max-width: 100%;
-        padding: 0 10px;
-        flex-direction: column;
-    }
-    .card {
-        padding: 15px;
-    }
-    .btn-primary {
-        font-size: 16px;
-        padding: 10px 0;
-    }
-    .result {
-        font-size: 14px;
-    }
-    .video-container {
-        max-width: 100%;
-        height: auto;
-    }
-    .video-container iframe {
-        height: auto;
-        max-height: 100%;
-    }
-    .arrow {
-        display: none;
-    }
-		
-    /* Specific adjustment to move .container.text-center higher */
-    .container.text-center {
-        margin-top: -30px !important; /* Adjust as needed */
-    }
-
-    .title-container {
-        margin-bottom: 40px !important;
-    }
-	}
-
-	* Hide number input arrows */
-	input[type="number"] {
-		-moz-appearance: textfield;
-		appearance: textfield;
-	}
-
-	input[type="number"]::-webkit-inner-spin-button,
-	input[type="number"]::-webkit-outer-spin-button {
-		-webkit-appearance: none;
-		margin: 0;
-	}
+        /* Hide number input arrows */
+        input[type="number"] {
+            -moz-appearance: textfield; /* Firefox */
+            appearance: textfield; /* Chrome, Safari, Edge */
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none; /* Chrome, Safari */
+            margin: 0; /* Remove default margin */
+        }
     </style>
 </head>
 <body>
