@@ -153,8 +153,15 @@
         }
 
         @media (max-width: 768px) {
+	    .title-container {
+		padding: 10px 20px; /* Adjust padding to fit the title size */
+		display: inline-block; /* Make container fit the title text width */
+		width: auto; /* Allow the container width to adjust according to the content */
+		margin: 0; /* Remove any extra margins */
+	    }
             .title-container h1 {
                 font-size: 28px; /* More aggressive scaling for mobile users */
+		margin: 0; /* Remove any margin around the h1 element */		    
             }
             .container {
                 max-width: 100%;
@@ -225,7 +232,6 @@
 
 			.title-container {
 				margin-bottom: 40px !important;
-				padding-top: 50px;
 			}
 		}
 
