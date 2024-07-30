@@ -255,9 +255,13 @@
             // Hide video container by default
             videoContainer.style.display = "none";
 
-            if (partNumber === 131) {
-                newURL = "https://indavideo.hu/video/Emanet_Letet_S01EEmanet_Letet_S01E131131";
-                resultElement.innerHTML = `A ${partNumber}. rész ezen a linken elérhető: <br> <span class="long-url"><a href="${newURL}" target="_blank">${newURL}</a></span>`;
+			if (partNumber === 131) {
+				// URL to display
+				const displayURL = "https://indavideo.hu/video/Emanet_Letet_S01E131";
+				// URL to navigate to
+				const navigateURL = "https://indavideo.hu/video/Emanet_Letet_S01EEmanet_Letet_S01E131131"; 
+				resultElement.innerHTML = `A ${partNumber}. rész ezen a linken elérhető: <br> <span class="long-url"><a href="${navigateURL}" target="_blank">${displayURL}</a></span>`;
+                // Embed video for part 131				
                 videoContainer.style.display = "block";
                 videoPlayer.src = "//embed.indavideo.hu/player/video/147723f83c";
             } else if (partNumber === 1 || partNumber === 5 || (partNumber >= 50 && partNumber <= 59)) {
