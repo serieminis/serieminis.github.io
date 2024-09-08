@@ -334,7 +334,7 @@
                 videoPlayer.src = "//embed.indavideo.hu/player/video/147723f83c";
             } else if (partNumber === 1 || partNumber === 5 || (partNumber >= 50 && partNumber <= 59)) {
                 resultElement.innerHTML = `<p style="color:red;">Az ${partNumber}. rész jelenleg nem elérhető.</p>`;
-            } else if (partNumber >= 65 && partNumber <= 406) {
+            } else if (partNumber >= 65 && partNumber <= 412) {
                 resultElement.innerHTML = `A ${partNumber}. rész ezen a linken elérhető: <br> <a href="${newURL}" target="_blank">${newURL}</a>`;
                 videoContainer.style.display = "block"; // Show video container
                 switch (partNumber) {
@@ -1360,12 +1360,30 @@
 				break;
 			case 406:
 				videoPlayer.src = "//embed.indavideo.hu/player/video/9aeca09906";
-				break;				
+				break;
+			case 407:
+				videoPlayer.src = "//embed.indavideo.hu/player/video/d39039e510";
+				break;
+			case 408:
+				videoPlayer.src = "//embed.indavideo.hu/player/video/785490f25a";
+				break;
+			case 409:
+				videoPlayer.src = "//embed.indavideo.hu/player/video/4191afc815";
+				break;
+			case 410:
+				videoPlayer.src = "//embed.indavideo.hu/player/video/fef3274850";
+				break;
+			case 411:
+				videoPlayer.src = "//embed.indavideo.hu/player/video/09daafbc58";
+				break;
+			case 412:
+				videoPlayer.src = "//embed.indavideo.hu/player/video/b8d157d947";
+				break;
                 // Add more cases as needed
                 default:
 					videoPlayer.src = "//embed.indavideo.hu/player/video/default"; // Default or generic URL
             }
-            } else if (partNumber >= 407 && partNumber <= 499) {
+            } else if (partNumber >= 413 && partNumber <= 499) {
                 resultElement.innerHTML = `<p class="custom-yellow">A ${partNumber}. rész ezen a linken lesz elérhető:</p> <br> <a href="${newURL}" target="_blank">${newURL}</a>`;
             } else if (partNumber >= 500 && partNumber <= 599) {
                 resultElement.innerHTML = `<p class="custom-yellow">Az ${partNumber}. rész ezen a linken lesz elérhető:</p> <br> <a href="${newURL}" target="_blank">${newURL}</a>`;
